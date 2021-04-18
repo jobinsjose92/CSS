@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100&display=swap');
+
+:root{
+    --level-one:translateZ(3rem);
+    --level-two:translateZ(6rem);
+    --level-three:translateZ(9rem);
+
+    --fw-normal: 400;
+    --fw-bold: 700;
+
+}
+
+
+*{
+
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    height:100vh;
+    display: grid;
+    place-items:center;
+    font-family: 'Antonio', sans-serif;
+}
+
+.card{
+    width:400px;
+   
+}
+
+.card_content{
+    text-align:center;
+    position:relative;
+    padding:5em;
+    transition: transform 3s;
+    background: pink;
+    transform-style: preserve-3d;
+}
+ .card:hover .card_content{
+    transform:rotateY(.5turn);
+    
+}
+
+.card_front,.card_back{
+    position:absolute;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 2em;
+    transform-style: preserve-3d;
+}
+
+.card_subtitle{
+    transform:translateZ(5rem);
+    letter-spacing: 4px;
+}
+
+.card_body{
+    transform:translateZ(3rem);
+}
+
+.card_content:before{
+    content:'';
+    position: absolute;
+    top:1rem;
+    bottom:1rem;
+    left: 1rem;
+    right: 1rem;
+    border: 3px solid gray;
+    transform:translateZ(3rem);
+}
+
+
+.card_front{
+    display: grid;
+}
+
+/* to move title to front from the card background  */
+.card_title {
+    font-size: 2rem;
+    transform:translateZ(5rem);
+    order:2;
+    text-transform: uppercase;
+}
+
+.card_back{
+    transform: rotateY(.5turn);
+    background: lightblue;
+}
+
